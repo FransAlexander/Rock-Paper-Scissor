@@ -1,29 +1,32 @@
 
-const playerSelection = "paper"
-const computerSelection = "paper"
+const playerSelection = "rock".toUpperCase();
+const computerSelection = "paper".toUpperCase(); // add computerPlay() here and toUpperCase it 
 
 function playRound(playerSelection, computerSelection) {
 
     //rock choice
-    if (playerSelection == "rock" && computerSelection == "scissor") {
+    if (playerSelection === "ROCK" && computerSelection === "SCISSOR") {
         return `You Win ${playerSelection} Beats ${computerSelection}.`
-    } else if (playerSelection == "rock" && computerSelection == "paper") {
+    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
         return `You Loose ${computerSelection} Beats ${playerSelection}.`
         
     //Paper choice
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
+    } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
         return `You Win ${playerSelection} Beats ${computerSelection}.`
-    } else if (playerSelection == "paper" && computerSelection == "scissor") {
+    } else if (playerSelection === "PAPER" && computerSelection === "SCISSOR") {
         return `You Loose ${computerSelection} Beats ${playerSelection}.`
 
     //Scissor Choice
-    } else if (playerSelection == "scissor" && computerSelection == "paper") {
+    } else if (playerSelection === "SCISSOR" && computerSelection === "PAPER") {
         return `You Win ${playerSelection} Beats ${computerSelection}.`
-    } else if (playerSelection == "scissor" && computerSelection == "rock") {
+    } else if (playerSelection === "SCISSOR" && computerSelection === "ROCK") {
         return `You Loose ${computerSelection} Beats ${playerSelection}.`
+
     //same Choice
-    } else if (playerSelection == computerSelection){
+    } else if (playerSelection === computerSelection){
         return "DRAW go again"
+    }else{
+        return "Please enter ROCK, PAPER or SCISSOR"
     }
 
 }
