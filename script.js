@@ -46,12 +46,19 @@ function playRound(playerSelection, computerSelection) {
     }else{
         return "Please enter ROCK, PAPER or SCISSOR"
     }
+
 }
 
 //using toUpperCase() to make the input/output case insensitive by making
 //it ALL CAPS to match the ALL CAPS   IF conditionals statement strings
-const playerSelection = "paper".toUpperCase();
+const playerSelection = prompt().toUpperCase();
 const computerSelection = computerPlay().toUpperCase();
 
-console.log(playRound(playerSelection, computerSelection));
+
+console.log(playRound(playerSelection,computerSelection));
+function game() {
+
+}
+
+
 
