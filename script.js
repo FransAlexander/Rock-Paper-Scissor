@@ -21,38 +21,41 @@ function computerPlay() {
 
 
 function playRound(playerSelection, computerSelection) {
+    let playerScore = parseInt("0");
+    let computerScore = parseInt("0");
 
     //rock choice
     if (playerSelection === "ROCK" && computerSelection === "SCISSOR") {
-        return `You Win! ${playerSelection} Beats ${computerSelection}.`
+        playerScore += 1;
     } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-        return `You Loose! ${computerSelection} Beats ${playerSelection}.`
+        computerScore += 1;
         
     //Paper choice
     } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-        return `You Win! ${playerSelection} Beats ${computerSelection}.`
+        playerScore += 1;
     } else if (playerSelection === "PAPER" && computerSelection === "SCISSOR") {
-        return `You Loose! ${computerSelection} Beats ${playerSelection}.`
+        computerScore += 1;
 
     //Scissor Choice
     } else if (playerSelection === "SCISSOR" && computerSelection === "PAPER") {
-        return `You Win! ${playerSelection} Beats ${computerSelection}.`
+        playerScore += 1;
     } else if (playerSelection === "SCISSOR" && computerSelection === "ROCK") {
-        return `You Loose! ${computerSelection} Beats ${playerSelection}.`
+        computerScore += 1;
 
     //same Choice
     } else if (playerSelection === computerSelection){
-        return `${playerSelection} vs ${computerSelection} draw`
+        playerScore += 0;
+        computerScore += 0;
     }else{
-        return "Please enter ROCK, PAPER or SCISSOR"
+        "Please enter ROCK, PAPER or SCISSOR"
     }
-
+    return playerScore, computerScore;
 }
 
 //using toUpperCase() to make the input/output case insensitive by making
 //it ALL CAPS to match the ALL CAPS   IF conditionals statement strings
-const playerSelection = prompt().toUpperCase();
-const computerSelection = computerPlay().toUpperCase();
+const playerSelection = "rock".toUpperCase();
+const computerSelection = "paper".toUpperCase();
 
 
 console.log(playRound(playerSelection,computerSelection));
@@ -60,5 +63,12 @@ function game() {
 
 }
 
+
+// I need a way to keep track of how many score both Player and Computer has
+// I need to compare those to each other and return the outcome and declare a winner
+//for that to be possible i need to declare 2 var and add the score to them 
+
+
+// playRound to add score to score variables, then use those 
 
 
