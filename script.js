@@ -1,7 +1,7 @@
 //using toUpperCase() to make the input/output case insensitive by making
 //it ALL CAPS to match the ALL CAPS   IF conditionals statement strings
-const playerSelection = prompt().toUpperCase();
-const computerSelection = computerPlay().toUpperCase();
+
+
 
 function computerPlay() {
 
@@ -24,7 +24,9 @@ function computerPlay() {
 
 
 function playRound(playerSelection, computerSelection) {
+    
     let res = "";
+    
     //rock choice
     if (playerSelection === "ROCK" && computerSelection === "SCISSOR") {
     res =  "Rock-Win";
@@ -71,19 +73,33 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-    let roundResult = playRound(playerSelection, computerSelection);
-    let playerScore = parseInt("0");
-    let compScore = parseInt("0");
-    let res = "";
-    for (let i = 0; i < 5; i++) {
-            roundResult
-        }
-        
-     }
-     
-    
+    // let round1 = playRound(prompt().toUpperCase(), "paper".toUpperCase());
+    // let round2 =  playRound(prompt().toUpperCase(), "paper".toUpperCase());  
+    for (let i = 1; i <= 5; i++) {
+        switch(i){
+            case 1:
+                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+                break;
 
-     console.log(game())
+            case 2:
+                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+            break;
+            case 3:
+                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+            break;
+
+            case 4:
+                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+            break;
+            case 5:
+                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+            break;
+        }
+    }
+    
+}   
+
+console.log(game())
 
 
 
