@@ -73,21 +73,19 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-    // let round1 = playRound(prompt().toUpperCase(), "paper".toUpperCase());
-    // let round2 =  playRound(prompt().toUpperCase(), "paper".toUpperCase());  
+
+
     for (let i = 1; i <= 5; i++) {
         switch(i){
             case 1:
                 console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
-                break;
-
+            break;
             case 2:
                 console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
             break;
             case 3:
                 console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
             break;
-
             case 4:
                 console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
             break;
