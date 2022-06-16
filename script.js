@@ -29,15 +29,15 @@ function playRound(playerSelection, computerSelection) {
     
     //rock choice
     if (playerSelection === "ROCK" && computerSelection === "SCISSOR") {
-    res =  "Rock-Win";
+        res =  "Rock-Win";
     } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-    res =  "Rock-Loss";
-        
+        res =  "Rock-Loss";
+    
     //Paper choice
     } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
         res = "Paper-Win";
     } else if (playerSelection === "PAPER" && computerSelection === "SCISSOR") {
-    res =  "Paper-Loss";
+        res =  "Paper-Loss";
 
     //Scissor Choice
     } else if (playerSelection === "SCISSOR" && computerSelection === "PAPER") {
@@ -47,7 +47,7 @@ function playRound(playerSelection, computerSelection) {
 
     //same Choice
     } else if (playerSelection === computerSelection){
-    res =  "Draw";
+        res =  "Draw";
         
     }else{
         return "Please enter ROCK, PAPER or SCISSOR"
@@ -73,32 +73,66 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-
+    let playerScore = 0;
+    let computerScore = 0;
 
     for (let i = 1; i <= 5; i++) {
         switch(i){
             case 1:
-                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+                let roundRes1 = playRound(prompt().toUpperCase(), computerPlay().toUpperCase());
+                console.log(roundRes1);
+                if (roundRes1 === "Rock-Win" || roundRes1 === "Scissor-Win" || roundRes1 === "Paper-Win") {
+                    playerScore++
+                }else if (roundRes1 === "Rock-Loss" || roundRes1 === "Scissor-Loss" || roundRes1 === "Paper-Loss"){
+                    computerScore++
+                }
             break;
             case 2:
-                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+                let roundRes2 = playRound(prompt().toUpperCase(), computerPlay().toUpperCase());
+                console.log(roundRes2);
+                if (roundRes2 === "Rock-Win" || roundRes2 === "Scissor-Win" || roundRes2 === "Paper-Win") {
+                    playerScore++
+                }else if (roundRes2 === "Rock-Loss" || roundRes2 === "Scissor-Loss" || roundRes2 === "Paper-Loss"){
+                    computerScore++
+                }
             break;
             case 3:
-                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+                let roundRes3 = playRound(prompt().toUpperCase(), computerPlay().toUpperCase());
+                console.log(roundRes3);
+                if (roundRes3 === "Rock-Win" || roundRes3 === "Scissor-Win" || roundRes3 === "Paper-Win") {
+                    playerScore++
+                }else if (roundRes3 === "Rock-Loss" || roundRes3 === "Scissor-Loss" || roundRes3 === "Paper-Loss"){
+                    computerScore++
+                }
             break;
             case 4:
-                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+                let roundRes4 = playRound(prompt().toUpperCase(), computerPlay().toUpperCase());
+                console.log(roundRes4);
+                if (roundRes4 === "Rock-Win" || roundRes4 === "Scissor-Win" || roundRes4 === "Paper-Win") {
+                    playerScore++
+                }else if (roundRes4 === "Rock-Loss" || roundRes4 === "Scissor-Loss" || roundRes4 === "Paper-Loss"){
+                    computerScore++
+                }
             break;
             case 5:
-                console.log(playRound(prompt().toUpperCase(), computerPlay().toUpperCase()));
+                let roundRes5 = playRound(prompt().toUpperCase(), computerPlay().toUpperCase());
+                console.log(roundRes5);
+                if (roundRes5 === "Rock-Win" || roundRes5 === "Scissor-Win" || roundRes5 === "Paper-Win") {
+                    playerScore++
+                }else if (roundRes5 === "Rock-Loss" || roundRes5=== "Scissor-Loss" || roundRes5 === "Paper-Loss"){
+                    computerScore++
+                }
             break;
         }
     }
-    
+
+
+    return `player Score:${playerScore} computer Score:${computerScore}`
 }   
 
-console.log(game())
 
+
+console.log(game());
 
 
 
