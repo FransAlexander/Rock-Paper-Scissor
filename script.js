@@ -1,4 +1,4 @@
-
+// This function generates a random choice for the computer (rock paper or scissor)
 function computerPlay() {
     
     let compChoice = "";
@@ -15,7 +15,7 @@ function computerPlay() {
     return compChoice;
 }
 
-
+// This function returns the result of a Player vs Computer Round.
 function playRound(playerSelection, computerSelection) {
     
     let res = "";
@@ -46,7 +46,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-
+// This Fuction returns the end result of 5 playRound() and the result of each hand 
 function game() {
 
     let playerScore = 0;
