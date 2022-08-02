@@ -1,3 +1,20 @@
+const rockBtn = document.querySelector(".rock");
+rockBtn.addEventListener ("click", () => { console.log(playRound("ROCK", computerPlay().toUpperCase()))});
+
+const paperBtn = document.querySelector(".paper");
+paperBtn.addEventListener ("click", () => { console.log(playRound("PAPER", computerPlay().toUpperCase()))});
+
+const scissorBtn = document.querySelector(".scissor");
+scissorBtn.addEventListener ("click", () => { console.log(playRound("SCISSOR", computerPlay().toUpperCase()))});
+
+
+
+
+
+
+
+
+
 // This function generates a random choice for the computer (rock paper or scissor)
 function computerPlay() {
     
@@ -112,7 +129,7 @@ function game() {
 
 
 
-console.log(game());
+
 
 
 

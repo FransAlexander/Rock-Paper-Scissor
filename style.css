@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    height: 100vh;
+
+}
+
+.btn{
+    height: 10rem;
+    width: 19rem;
+    
+}
