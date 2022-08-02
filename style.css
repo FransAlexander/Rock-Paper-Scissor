@@ -1,14 +1,60 @@
+*{
+    box-sizing: border-box;
+}
+
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10rem;
     height: 100vh;
 
 }
 
+.btncontainer{
+    display: flex;
+    gap: 1rem;
+}
+
 .btn{
+    
     height: 10rem;
     width: 19rem;
+    
+}
+
+.handcontainer{
+    display: flex;
+    margin-top: 4rem;
+    
+    
+}
+
+.playerhand, .computerhand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 10rem;
+    width: 19rem;
+}
+
+.playerhand{
+    margin-right: 2rem;
+}
+.computerhand{
+    margin-left: 2rem;
+}
+
+h1{
+   display: flex;
+   align-items: center;
+   margin-top: 5rem;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }

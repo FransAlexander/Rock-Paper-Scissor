@@ -1,3 +1,5 @@
+// eventListeners for buttons 
+
 const rockBtn = document.querySelector(".rock");
 rockBtn.addEventListener ("click", () => { console.log(playRound("ROCK", computerPlay().toUpperCase()))});
 
@@ -6,7 +8,6 @@ paperBtn.addEventListener ("click", () => { console.log(playRound("PAPER", compu
 
 const scissorBtn = document.querySelector(".scissor");
 scissorBtn.addEventListener ("click", () => { console.log(playRound("SCISSOR", computerPlay().toUpperCase()))});
-
 
 
 
@@ -34,13 +35,16 @@ function computerPlay() {
 
 // This function returns the result of a Player vs Computer Round.
 function playRound(playerSelection, computerSelection) {
+
+    const playerHand = document.querySelector(".playerhand");
+    const computerHand = document.querySelector(".computerhand");
     
-    let res = "";
     
     if (playerSelection === "ROCK" && computerSelection === "SCISSOR") {
-        res =  "Rock-Win";
+        playerHand.textContent = `${playerSelection}`
+        computerHand.textContent = `${computerSelection}`
     } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-        res =  "Rock-Loss";
+        
     
     } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
         res = "Paper-Win";
@@ -59,7 +63,7 @@ function playRound(playerSelection, computerSelection) {
         return "Please enter ROCK, PAPER or SCISSOR"
     }
 
-    return res;
+
 }
 
 
