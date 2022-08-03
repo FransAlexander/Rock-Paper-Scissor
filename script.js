@@ -1,22 +1,37 @@
 // eventListeners for buttons 
-
 const rockBtn = document.querySelector(".rock");
-rockBtn.addEventListener ("click", () => { console.log(playRound("ROCK", computerPlay().toUpperCase()))});
+rockBtn.addEventListener ("click", () => {
+    playRound("ROCK", computerPlay().toUpperCase());
+    win(playerScr,compScr);
+});
 
 const paperBtn = document.querySelector(".paper");
-paperBtn.addEventListener ("click", () => { console.log(playRound("PAPER", computerPlay().toUpperCase()))});
+paperBtn.addEventListener ("click", () => {
+    playRound("PAPER", computerPlay().toUpperCase());
+    win(playerScr, compScr);
+});
 
 const scissorBtn = document.querySelector(".scissor");
-scissorBtn.addEventListener ("click", () => { console.log(playRound("SCISSOR", computerPlay().toUpperCase()))});
+scissorBtn.addEventListener ("click", () => {
+    playRound("SCISSOR", computerPlay().toUpperCase()) 
+    win(playerScr, compScr);
+});
+
+//references to the score and hand DIVs
+const playerScore = document.querySelector(".player_score");
+const playerHand = document.querySelector(".playerhand");
+
+const computerScore = document.querySelector(".computer_score");
+const computerHand = document.querySelector(".computerhand");
 
 
 
+let compScr = 0;
+let playerScr = 0;
 
 
 
-
-
-// This function generates a random choice for the computer (rock paper or scissor)
+// Computer Hand choice generator
 function computerPlay() {
     
     let compChoice = "";
@@ -33,103 +48,156 @@ function computerPlay() {
     return compChoice;
 }
 
+
+
+
 // This function returns the result of a Player vs Computer Round.
 function playRound(playerSelection, computerSelection) {
 
-    const playerHand = document.querySelector(".playerhand");
-    const computerHand = document.querySelector(".computerhand");
-    
-    
     if (playerSelection === "ROCK" && computerSelection === "SCISSOR") {
-        playerHand.textContent = `${playerSelection}`
-        computerHand.textContent = `${computerSelection}`
+       //ADD 1 point player
+       playerScr++;
     } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-        
-    
+        //ADD 1 point Computer
+        compScr++;
     } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-        res = "Paper-Win";
+       //ADD 1 point player
+       playerScr++;
     } else if (playerSelection === "PAPER" && computerSelection === "SCISSOR") {
-        res =  "Paper-Loss";
-    
+      //ADD 1 point Computer
+      compScr++
     } else if (playerSelection === "SCISSOR" && computerSelection === "PAPER") {
-        res = "Scissor-Win";
+        //ADD 1 point player
+        playerScr++;
     } else if (playerSelection === "SCISSOR" && computerSelection === "ROCK") {
-        res = "Scissor-Loss";
-    
+        //ADD 1 point Computer
+        compScr++;
     } else if (playerSelection === computerSelection){
-        res =  "Draw";
-    
-    }else{
-        return "Please enter ROCK, PAPER or SCISSOR"
+       
+    }
+
+
+    //prints hand results in the hand DIVs
+    playerHand.textContent = `${playerSelection}`
+    computerHand.textContent = `${computerSelection}`
+
+    //prints scores to DIVs
+    playerScore.textContent = `YOU: ${playerScr}`;
+    computerScore.textContent = `COMPUTER: ${compScr}`;
+
+}
+
+
+function win(player, computer){
+
+    if (player === 5){
+        playerScore.textContent = "you win"
+    }else if (computer === 5){
+        computerScore.textContent = "computer win"
     }
 
 
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // This Fuction returns the end result of 5 playRound() and the result of each hand 
-function game() {
+// function game() {
 
-    let playerScore = 0;
-    let computerScore = 0;
+//     let playerScore = 0;
+//     let computerScore = 0;
     
-    for (let i = 1; i <= 5; i++) {
-        switch(i){
-            case 1:
-                let roundRes1 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
-                console.log(roundRes1);
+//     for (let i = 1; i <= 5; i++) {
+//         switch(i){
+//             case 1:
+//                 let roundRes1 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
+//                 console.log(roundRes1);
 
-                if (roundRes1 === "Rock-Win" || roundRes1 === "Scissor-Win" || roundRes1 === "Paper-Win") {
-                    playerScore++
-                }else if (roundRes1 === "Rock-Loss" || roundRes1 === "Scissor-Loss" || roundRes1 === "Paper-Loss"){
-                    computerScore++
-                }
-            break;
-            case 2:
-                let roundRes2 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
-                console.log(roundRes2);
+//                 if (roundRes1 === "Rock-Win" || roundRes1 === "Scissor-Win" || roundRes1 === "Paper-Win") {
+//                     playerScore++
+//                 }else if (roundRes1 === "Rock-Loss" || roundRes1 === "Scissor-Loss" || roundRes1 === "Paper-Loss"){
+//                     computerScore++
+//                 }
+//             break;
+//             case 2:
+//                 let roundRes2 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
+//                 console.log(roundRes2);
 
-                if (roundRes2 === "Rock-Win" || roundRes2 === "Scissor-Win" || roundRes2 === "Paper-Win") {
-                    playerScore++
-                }else if (roundRes2 === "Rock-Loss" || roundRes2 === "Scissor-Loss" || roundRes2 === "Paper-Loss"){
-                    computerScore++
-                }
-            break;
-            case 3:
-                let roundRes3 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
-                console.log(roundRes3);
+//                 if (roundRes2 === "Rock-Win" || roundRes2 === "Scissor-Win" || roundRes2 === "Paper-Win") {
+//                     playerScore++
+//                 }else if (roundRes2 === "Rock-Loss" || roundRes2 === "Scissor-Loss" || roundRes2 === "Paper-Loss"){
+//                     computerScore++
+//                 }
+//             break;
+//             case 3:
+//                 let roundRes3 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
+//                 console.log(roundRes3);
 
-                if (roundRes3 === "Rock-Win" || roundRes3 === "Scissor-Win" || roundRes3 === "Paper-Win") {
-                    playerScore++
-                }else if (roundRes3 === "Rock-Loss" || roundRes3 === "Scissor-Loss" || roundRes3 === "Paper-Loss"){
-                    computerScore++
-                }
-            break;
-            case 4:
-                let roundRes4 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
-                console.log(roundRes4);
+//                 if (roundRes3 === "Rock-Win" || roundRes3 === "Scissor-Win" || roundRes3 === "Paper-Win") {
+//                     playerScore++
+//                 }else if (roundRes3 === "Rock-Loss" || roundRes3 === "Scissor-Loss" || roundRes3 === "Paper-Loss"){
+//                     computerScore++
+//                 }
+//             break;
+//             case 4:
+//                 let roundRes4 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
+//                 console.log(roundRes4);
 
-                if (roundRes4 === "Rock-Win" || roundRes4 === "Scissor-Win" || roundRes4 === "Paper-Win") {
-                    playerScore++
-                }else if (roundRes4 === "Rock-Loss" || roundRes4 === "Scissor-Loss" || roundRes4 === "Paper-Loss"){
-                    computerScore++
-                }
-            break;
-            case 5:
-                let roundRes5 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
-                console.log(roundRes5);
+//                 if (roundRes4 === "Rock-Win" || roundRes4 === "Scissor-Win" || roundRes4 === "Paper-Win") {
+//                     playerScore++
+//                 }else if (roundRes4 === "Rock-Loss" || roundRes4 === "Scissor-Loss" || roundRes4 === "Paper-Loss"){
+//                     computerScore++
+//                 }
+//             break;
+//             case 5:
+//                 let roundRes5 = playRound( prompt().toUpperCase(), computerPlay().toUpperCase() );
+//                 console.log(roundRes5);
 
-                if (roundRes5 === "Rock-Win" || roundRes5 === "Scissor-Win" || roundRes5 === "Paper-Win") {
-                    playerScore++
-                }else if (roundRes5 === "Rock-Loss" || roundRes5=== "Scissor-Loss" || roundRes5 === "Paper-Loss"){
-                    computerScore++
-                }
-            break;
-        }
-    }
+//                 if (roundRes5 === "Rock-Win" || roundRes5 === "Scissor-Win" || roundRes5 === "Paper-Win") {
+//                     playerScore++
+//                 }else if (roundRes5 === "Rock-Loss" || roundRes5=== "Scissor-Loss" || roundRes5 === "Paper-Loss"){
+//                     computerScore++
+//                 }
+//             break;
+//         }
+//     }
 
-    return `player Score:${playerScore} computer Score:${computerScore}`
-}   
+//     return `player Score:${playerScore} computer Score:${computerScore}`
+// }   
 
 
 
