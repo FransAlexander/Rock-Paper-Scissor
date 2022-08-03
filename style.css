@@ -80,7 +80,7 @@ h2{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.winner_player, .winner_computer{
+.winner_player{
     margin: 0;
     font-size: 66px;
 }

@@ -89,14 +89,30 @@ function playRound(playerSelection, computerSelection) {
 
 
 function win(player, computer){
-
+  
+    
     if (player === 5){
-        playerScore.textContent = "you win"
+        winnerAnnounce("You Win");
     }else if (computer === 5){
-        computerScore.textContent = "computer win"
+        winnerAnnounce("Computer Win");
     }
 
 
+}
+
+function winnerAnnounce(winner){
+
+    const container = document.querySelector(".container");
+    const body = document.querySelector(".body");
+
+    const div = document.createElement("div");
+    div.classList.add("winner");
+    const h3 = document.createElement("h3");
+    h3.classList.add("winner_player");
+    h3.textContent = winner;
+    div.appendChild(h3);
+
+    body.insertBefore(div, container);
 }
 
 
