@@ -1,13 +1,19 @@
 *{
     box-sizing: border-box;
+    
 }
-
+body{
+    margin: 0;
+    padding: 0;
+    
+}
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 
 }
 
@@ -61,24 +67,20 @@ h2{
     
 }
 
-.winner{
-    display: inline; /* Hidden by default */
+.winner{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    
-    left: 25rem;
-    top: 10rem;
+    left: 25vw;
+    top: 30vh;
     width: 50%; /* Full width */
     height: 25%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.winner_content{
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+.winner_player, .winner_computer{
+    margin: 0;
+    font-size: 66px;
 }
